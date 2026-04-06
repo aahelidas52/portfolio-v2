@@ -4,7 +4,7 @@ import useSectionFocus from "@/hooks/useSectionFocus";
 
 const quickFacts = [
   { icon: GraduationCap, label: "Major", value: "Biomedical Engineering" },
-  { icon: FlaskConical, label: "University", value: "Your University Name" },
+  { icon: FlaskConical, label: "University", value: "San Jose State University" },
   { icon: Cpu, label: "Research Focus", value: "Medical Devices & Biomechanics" },
   { icon: Heart, label: "Interests", value: "Healthcare Innovation" },
 ];

@@ -47,7 +47,7 @@ const Navbar = () => {
               </Link>
             ))}
             <a 
-              href="/assets/resume.pdf" 
+              href={resumePdf} 
               target="_blank"
               rel="noopener noreferrer"
               className="ml-4"

@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { FileText, Menu, X } from "lucide-react";
 import { useState } from "react";
+import resumePdf from "../assets/resume.pdf?url";
 
 const navLinks = [
   { name: "Home", path: "/" },

@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Courier+Prime:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light parchment background */
+    --background: 35 30% 96%;
+    --background-secondary: 35 25% 92%;
+    --background-tertiary: 35 20% 88%;
+  
+    /* Body text (NOT black, still readable) */
+    --foreground: 270 10% 20%;
+    --foreground-muted: 270 8% 40%;
+  
+    /* Cards */
+    --card: 35 28% 98%;
+    --card-foreground: 270 10% 20%;
+    --card-hover: 35 25% 94%;
+  
+    --popover: 35 28% 98%;
+    --popover-foreground: 270 10% 20%;
+  
+    /* Wine/Burgundy hierarchy */
+    --primary: 345 60% 32%;          /* burgundy */
+    --primary-light: 345 55% 40%;
+    --primary-dark: 345 65% 24%;
+    --primary-foreground: 35 30% 98%;
+  
+    /* Plum family (you asked for it) */
+    --plum: 285 30% 34%;
+    --plum-light: 285 32% 44%;
+    --plum-dark: 285 35% 26%;
+  
+    /* Secondary = deep wine/plum (not green anymore) */
+    --secondary: 290 22% 30%;
+    --secondary-foreground: 35 30% 98%;
+  
+    /* Muted surfaces */
+    --muted: 35 20% 92%;
+    --muted-foreground: 270 8% 42%;
+  
+    /* Accent = warm wine highlight (no gold) */
+    --accent: 330 40% 36%;
+    --accent-muted: 330 30% 30%;
+    --accent-foreground: 35 30% 98%;
+  
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 35 30% 98%;
+  
+    --border: 35 18% 86%;
+    --border-accent: 345 55% 36%;
+    --input: 35 18% 86%;
+    --ring: 345 60% 32%;
+
+    /* Dark Orange Accent Layer */
+    --orange: 24 75% 38%;           /* deep burnt orange */
+    --orange-light: 24 70% 48%;
+    --orange-muted: 24 55% 30%;
+    --orange-foreground: 35 30% 98%;
+  
+    /* Radius */
+    --radius: 0.9rem;
+    --radius-lg: 1.1rem;
+    --radius-xl: 1.35rem;
+  
+    /* Shadows (light + professional) */
+    --shadow-sm: 0 1px 10px hsl(270 10% 10% / 0.06);
+    --shadow-md: 0 10px 30px hsl(270 10% 10% / 0.10);
+    --shadow-lg: 0 18px 50px hsl(270 10% 10% / 0.14);
+  
+    /* Sidebar (keep consistent) */
+    --sidebar-background: 35 28% 98%;
+    --sidebar-foreground: 270 10% 20%;
+    --sidebar-primary: 345 60% 32%;
+    --sidebar-primary-foreground: 35 30% 98%;
+    --sidebar-accent: 285 30% 34%;
+    --sidebar-accent-foreground: 35 30% 98%;
+    --sidebar-border: 35 18% 86%;
+    --sidebar-ring: 345 60% 32%;
+  }
+
+  /* Make sure “dark” doesn’t flip your whole site back */
+  .dark {
+    --background: 35 30% 96%;
+    --foreground: 210 15% 15%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    background-color: hsl(var(--background));
+  }
+  @layer base {
+    h1, h2, h3, h4, h5, h6 {
+      @apply text-foreground;
+    }
+  }
+
+  .font-mono-accent {
+    font-family: "Courier Prime", ui-monospace, SFMono-Regular, Menlo, monospace;
+    letter-spacing: 0.04em;
+  }
+
+  h1, h2, h3 {
+    font-family: "Roboto Slab", ui-serif, Georgia, serif;
+    letter-spacing: 0.01em;
+    font-weight: 600;
+  
+    /* NOT black: use wine/plum */
+    color: hsl(var(--primary));
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.20);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer utilities {
+  .accent-orange-line {
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--orange)) 50%,
+      transparent
+    );
+  }
+  /* Section focus effect classes */
+  .section-focusable {
+    @apply transition-all duration-700 ease-out;
+  }
+
+  .section-focused {
+    @apply opacity-100;
+    transform: translateY(0) scale(1);
+  }
+
+  .section-unfocused {
+    @apply opacity-40;
+    filter: saturate(0.7);
+  }
+
+  /* Flat card with subtle border */
+  .flat-card {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+  }
+
+  .flat-card-hover:hover {
+    background: hsl(var(--card-hover));
+    border-color: hsl(var(--border) / 0.8);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Accent border glow */
+  .glow-gold { box-shadow: none; }
+  .glow-red { box-shadow: none; }
+
+  /* Text gradient */
+  .text-gradient-plum {
+    background: linear-gradient(135deg, hsl(var(--foreground)) 0%, hsl(var(--primary)) 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+
+  /* Subtle red tint background */
+  .bg-red-tint {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--background)) 0%,
+      hsl(var(--primary) / 0.06) 55%,
+      hsl(var(--secondary) / 0.05) 100%
+    );
+  }
+
+  /* Thin accent lines */
+  .accent-line-gold {
+    @apply h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent;
+  }
+
+  .accent-line-red {
+    @apply h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent) / 0.4);
+}
+
+/* Smooth scroll snap for sections */
+.scroll-snap-container {
+  scroll-snap-type: y proximity;
+}
+
+.scroll-snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+@layer base {
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 200ms ease, opacity 200ms ease;
+  }
+
+  a:hover,
+  a:focus-visible {
+    /* “duller shade of original” = same color, less intensity */
+    opacity: 0.8;
+  }
+
+  a:active {
+    opacity: 0.7;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-foreground antialiased; 
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif; 
+  font-weight: 400; 
+  background-color: hsl(var(--background)); 
+}
+
+a,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}

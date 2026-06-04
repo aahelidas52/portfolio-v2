@@ -34,12 +34,30 @@ const certifications: Certification[] = [
   },
   {
     id: "3",
+    name: "Basic Life Support",
+    issuer: "CITI Program",
+    issueDate: "Completed",
+    description:
+      "Basic Life Support covering CPR (Adult / Child / Infant / Choking) and AED / First-Aid / Bloodborne Pathogens",
+    credentialUrl: "https://drive.google.com/file/d/1q9i2MiUwb-vsDzbQIL5DCpoykWupnKbn/view?usp=drive_link",
+  },
+  {
+    id: "4",
     name: "CITI Program – Biomedical Research (Human Subjects)",
     issuer: "CITI Program",
     issueDate: "Completed",
     description:
       "Human subjects research training covering ethics, compliance, and responsible conduct for biomedical studies.",
-    credentialUrl: "#",
+    credentialUrl: "https://drive.google.com/file/d/1_bA6hrCTR0zDTstecOt-ydX2UvtLtUl-/view?usp=drive_link",
+  },
+  {
+    id: "5",
+    name: "CITI Program – Good Clinical Practice (U.S. FDA Focus)",
+    issuer: "CITI Program",
+    issueDate: "Completed",
+    description:
+      "Good Clinical Practice for Clinical Trials with Investigational Drugs and Medical Devices (U.S. FDA Focus)",
+    credentialUrl: "https://drive.google.com/file/d/1f7tIxaeh8VkWA8NvHYkItn29DSGqBQsn/view?usp=drive_link",
   },
 ];
 

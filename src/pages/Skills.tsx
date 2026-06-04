@@ -16,6 +16,7 @@ const skillCategories = [
       "Revit",
       "Rhino 3D",
       "Slicer",
+      "Salesforce CRM",
       "Adobe Illustrator/Express",
       "3D Printing",
       "Prototyping",
